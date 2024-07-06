@@ -1,5 +1,5 @@
 import arg from 'arg'
-import { METERS_PER_MAP_UNIT_LENGTH, VALID_FLAGS } from './constants.js'
+import { COEFFICIENT_OF_FRICTION, METERS_PER_MAP_UNIT_LENGTH, VALID_FLAGS } from './constants.js'
 
 export const getUserArgs = (options = {
     argv: process.argv.slice(2),
@@ -26,10 +26,10 @@ export const getUserArgs = (options = {
 
     return args
 }
+// 0.70
+export const rForGivenV = (v) => Math.ceil((v * v) / (COEFFICIENT_OF_FRICTION * 127.0))
 
-export const rForGivenV = (v) => Math.ceil((v * v) / 127.0)
-
-export const vForGivenR = (r) => Math.floor(Math.sqrt(127.0 * r))
+export const vForGivenR = (r) => Math.floor(Math.sqrt(COEFFICIENT_OF_FRICTION * 127.0 * r))
 
 export const minimumLengthInMapUnits = (meters) => Math.ceil(meters / METERS_PER_MAP_UNIT_LENGTH)
 
@@ -39,7 +39,7 @@ export const exitWithError = (message, ...extras) => {
 }
 
 export const showResults = (V, R, U) => console.log([
-    'from v^2 = 127r',
+    'using: e + f = v^2 / 127r, e = 0, f = 0.3',
     `Max design speed:\t${V} km/h`,
     `Radius min length:\t${R} m`,
     `Radius min # tiles:\t${U} u`,
