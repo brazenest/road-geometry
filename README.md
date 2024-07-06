@@ -4,11 +4,11 @@ _A command-line based tool to calculate/derive road curve parameters to model re
 
 ## Installation
 
-- `npm i` to install the prerequisites
+- `npm i` or `yarn` to install the prerequisites
 
 ## Usage
 
-This program uses the standard equation (`v^2 = 127r`) used throughout the United States road engineering manuals that creates a relation between a road curve's radius (`r`) and the design speed limit (`v`) through the curve, given the road exhibits no [cant (i.e. superelevation)](https://en.wikipedia.org/wiki/Cant_(road/rail)).
+This program uses the standard equation (`e + f = v^2 / 127r`) used throughout the United States road engineering manuals that creates a relation between a road curve's radius (`r`) and the design speed limit (`v`) through the curve, given the road exhibits no [cant (i.e. superelevation)](https://en.wikipedia.org/wiki/Cant_(road/rail)).
 
 Given this equation, this program may be used in multiple ways depending on your intention:
 
@@ -19,8 +19,8 @@ As this program is tailored to users of the [Cities:Skylines](https://www.cities
 
 ## Input parameters
 
-- Radius: `--radius`
-- Velocity: `--velocity`
+- Radius: 	`--radius` (or `--r`)
+- Velocity:	`--velocity` (or `--v`)
 
 ## How to run
 
@@ -28,7 +28,7 @@ As this program is tailored to users of the [Cities:Skylines](https://www.cities
 
 ## Release info
 
-The latest version is 1.0.0, and was released on 7 January 2022.
+The latest version is 1.1.0, and was released on 16 June 2024.
 ## Copyright and License
 
 This program is **Copyright &copy; 2022 Alden Gillespy**, and provided under the [Creative Commons Attribution-NoCommercial-NoDerivatives International 4.0 (CC-BY-NC-ND 4.0) License](https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode).
