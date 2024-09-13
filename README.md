@@ -4,7 +4,7 @@ _A command-line based tool to calculate/derive road curve parameters to model re
 
 ## Installation
 
-- `npm i` or `yarn` to install the prerequisites
+- Run `yarn` to install the prerequisites.
 
 ## Usage
 
