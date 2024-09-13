@@ -8,12 +8,14 @@ _A command-line based tool to calculate/derive road curve parameters to model re
 
 ## Usage
 
-This program uses the standard equation (`e + f = v^2 / 127r`) used throughout the United States road engineering manuals that creates a relation between a road curve's radius (`r`) and the design speed limit (`v`) through the curve, given the road exhibits no [cant (i.e. superelevation)](https://en.wikipedia.org/wiki/Cant_(road/rail)).
+This program uses the standard equation (`e + f = v^2 / 127r`) used throughout the United States road engineering manuals to create a relation between a road curve's radius (`r`) and the design speed limit (`v`) through the curve, given the road exhibits no [cant (i.e. superelevation)](https://en.wikipedia.org/wiki/Cant_(road/rail)).
 
 Given this equation, this program may be used in multiple ways depending on your intention:
 
 1. **Specify a radius** (in meters) to calculate the proper speed limit (in km/h) for the curve.
 2. **Specify a velocity** (in km/h) to calculate the minimum radius (in meters) for the curve.
+
+The program's output also displays the values in imperial units (radius in feet, velocity in mi/h).
 
 As this program is tailored to users of the [Cities:Skylines](https://www.citiesskylines.com/) computer game, the output of this program displays the radius value in meters and in game-units (u, where `1u === 8 meters`).
 
@@ -21,16 +23,16 @@ As this program is tailored to users of the [Cities:Skylines](https://www.cities
 
 | Parameter | Units | Flags               |
 | --------- | ----- | ------------------- |
-| Radius    | m     | `--radius`, `--r`   |
-| Velocity  | km/h  | `--velocity`, `--v` |
+| radius    | m     | `--r`, `--radius`   |
+| velocity  | km/h  | `--v`, `--velocity` |
 
 ## How to run
 
-`node ./index.js --[parameter] [value] ...`
+`node ./index.js --[flag] [value] ...`
 
 ## Release info
 
-The latest version is **1.1.0**, and was released on **08 September 2024**.
+The latest version is **1.1.0**, and was released on **12 September 2024**.
 
 ## Copyright and License
 
