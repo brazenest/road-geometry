@@ -1,9 +1,9 @@
 import { expect } from 'chai'
 import { getRandomAlphaString, getRandomPositiveInteger, getUserArgs } from './../helpers.js'
 
-describe('flag aliases', function () {
+describe('flag aliases', function() {
 
-    it('should interpret --r as --radius', function () {
+    it('should interpret --r as --radius', function() {
         const argv = ['--r', getRandomPositiveInteger()]
         const options = { argv }
         const args = getUserArgs(options)
@@ -12,7 +12,7 @@ describe('flag aliases', function () {
         expect(Object.keys(args).includes('--radius')).to.equal(true)
     })
 
-    it('should interpret -r as --radius', function () {
+    it('should interpret -r as --radius', function() {
         const argv = ['-r', getRandomPositiveInteger()]
         const options = { argv }
         const args = getUserArgs(options)
@@ -21,7 +21,7 @@ describe('flag aliases', function () {
         expect(Object.keys(args).includes('--radius')).to.equal(true)
     })
 
-    it('should interpret --v as --velocity', function () {
+    it('should interpret --v as --velocity', function() {
         const argv = ['--v', getRandomPositiveInteger()]
         const options = { argv }
         const args = getUserArgs(options)
@@ -30,7 +30,7 @@ describe('flag aliases', function () {
         expect(Object.keys(args).includes('--velocity')).to.equal(true)
     })
 
-    it('should interpret -v as --velocity', function () {
+    it('should interpret -v as --velocity', function() {
         const argv = ['-v', getRandomPositiveInteger()]
         const options = { argv }
         const args = getUserArgs(options)
@@ -39,7 +39,7 @@ describe('flag aliases', function () {
         expect(Object.keys(args).includes('--velocity')).to.equal(true)
     })
 
-    it('should interpret --speed as --velocity', function () {
+    it('should interpret --speed as --velocity', function() {
         const argv = ['--speed', getRandomPositiveInteger()]
         const options = { argv }
         const args = getUserArgs(options)
@@ -49,7 +49,7 @@ describe('flag aliases', function () {
     })
 })
 
-describe('input is non-zero positive integer', function () {
+describe('input is non-zero positive integer', function() {
 
     it('should accept for --velocity', function() {
         const argv = ['--velocity', getRandomPositiveInteger()]
@@ -59,7 +59,7 @@ describe('input is non-zero positive integer', function () {
         expect(Object.keys(args).includes('--velocity')).to.equal(true)
     })
 
-    it('should accept for --radius', function () {
+    it('should accept for --radius', function() {
         const argv = ['--radius', getRandomPositiveInteger()]
         const options = { argv }
         const args = getUserArgs(options)
@@ -77,7 +77,7 @@ describe('input is non-zero positive integer', function () {
     })
 })
 
-describe('input is zero', function () {
+describe('input is zero', function() {
 
     it('should reject for --velocity', function() {
         const argv = ['--velocity', 0]
@@ -118,7 +118,7 @@ describe('input is zero', function () {
     })
 })
 
-describe('input is negative integer', function () {
+describe('input is negative integer', function() {
 
     it('should reject for --velocity', function() {
         const argv = ['--velocity', -1 * getRandomPositiveInteger()]
@@ -159,7 +159,7 @@ describe('input is negative integer', function () {
     })
 })
 
-describe('input is not an integer', function () {
+describe('input is not an integer', function() {
 
     it('should reject for --velocity', function() {
         const argv = ['--velocity', getRandomAlphaString(6)]
