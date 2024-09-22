@@ -32,7 +32,7 @@ As this program is tailored to users of the [Cities:Skylines](https://www.cities
 
 ## Release info
 
-The latest version is **1.1.0**, and was released on **12 September 2024**.
+The latest version is **1.2.0**, and was released on **21 September 2024**.
 
 ## Copyright and License
 
