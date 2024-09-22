@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import { getRandomAlphaString, getRandomPositiveInteger, getUserArgs } from './../helpers.js'
+import { getRandomAlphaString, getRandomPositiveInteger, getUserArgs, createErrorMessage, showResults } from './../helpers.js'
 
 describe('flag aliases', function() {
 
@@ -128,7 +128,7 @@ describe('input is negative integer', function() {
         expect(Object.keys(args).includes('--velocity')).to.equal(true)
         expect(args['--velocity']).to.be.NaN
     })
-    
+
     it('should reject for --radius', function() {
         const argv = ['--radius', -1 * getRandomPositiveInteger()]
         const options = { argv }
@@ -137,7 +137,7 @@ describe('input is negative integer', function() {
         expect(Object.keys(args).includes('--radius')).to.equal(true)
         expect(args['--radius']).to.be.NaN
     })
-    
+
     it('should reject for --radius regardless of --velocity value', function() {
         const argv = ['--velocity', getRandomPositiveInteger(), '--radius', -1 * getRandomPositiveInteger()]
         const options = { argv }
@@ -197,5 +197,27 @@ describe('input is not an integer', function() {
         expect(Object.keys(args).includes('--radius')).to.equal(true)
         expect(Object.keys(args).includes('--velocity')).to.equal(true)
         expect(args['--velocity']).to.be.NaN
+    })
+})
+
+describe('showErrorMessage', function() {
+
+    it('responds as expected', function() {
+        const message = getRandomAlphaString(10)
+        const result = createErrorMessage(message)
+
+        expect(result).to.be.instanceof(Error)
+    })
+})
+
+describe('showResults', function() {
+
+    it('responds as expected', function() {
+        const V = 55
+        const R = 80
+        const U = 10
+        const message = showResults(V, R, U)
+
+        expect(message).to.equal("using: e + f = v^2 / 127r, e = 0, f = 0.3\nMax design speed:	55 km/h (34 mi/h)\nRadius min length:	80 m (262 ft)\nRadius min # tiles:	10 u")
     })
 })
