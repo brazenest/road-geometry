@@ -35,7 +35,7 @@ export const minimumLengthInMapUnits = (meters) => Math.ceil(meters / METERS_PER
 
 export const createErrorMessage = (message, ...extras) => Error([message, (extras.length ? extras : '')].join(' ').trim())
 
-export const showResults = (V, R, U) => [
+export const produceResults = (V, R, U) => [
     'using: e + f = v^2 / 127r, e = 0, f = 0.3',
     `Max design speed:\t${V} km/h (${Math.floor(V * MILES_PER_KILOMETER)} mi/h)`,
     `Radius min length:\t${R} m (${Math.floor(R * FEET_PER_METER)} ft)`,

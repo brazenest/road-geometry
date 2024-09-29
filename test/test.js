@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import { getRandomAlphaString, getRandomPositiveInteger, getUserArgs, createErrorMessage, showResults } from './../helpers.js'
+import { getRandomAlphaString, getRandomPositiveInteger, getUserArgs, createErrorMessage, produceResults } from './../helpers.js'
 
 describe('flag aliases', function () {
 
@@ -216,7 +216,7 @@ describe('showResults', function () {
         const V = 55
         const R = 80
         const U = 10
-        const message = showResults(V, R, U)
+        const message = produceResults(V, R, U)
 
         expect(message).to.equal("using: e + f = v^2 / 127r, e = 0, f = 0.3\nMax design speed:	55 km/h (34 mi/h)\nRadius min length:	80 m (262 ft)\nRadius min # tiles:	10 u")
     })

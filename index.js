@@ -1,4 +1,4 @@
-import { getUserArgs, createErrorMessage, rForGivenV, vForGivenR, showResults, minimumLengthInMapUnits } from './helpers.js'
+import { getUserArgs, createErrorMessage, rForGivenV, vForGivenR, produceResults, minimumLengthInMapUnits } from './helpers.js'
 
 const USER_ARGS = getUserArgs()
 const USER_FLAGS = Object.keys(USER_ARGS)
@@ -11,4 +11,5 @@ const R = USER_FLAGS.includes('--radius') ? USER_ARGS['--radius'] : rForGivenV(U
 const V = USER_FLAGS.includes('--velocity') ? USER_ARGS['--velocity'] : vForGivenR(USER_ARGS['--radius'])
 const U = minimumLengthInMapUnits(R)
 
-showResults(V, R, U)
+produceResults(V, R, U)
+
