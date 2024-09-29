@@ -11,5 +11,11 @@ const R = USER_FLAGS.includes('--radius') ? USER_ARGS['--radius'] : rForGivenV(U
 const V = USER_FLAGS.includes('--velocity') ? USER_ARGS['--velocity'] : vForGivenR(USER_ARGS['--radius'])
 const U = minimumLengthInMapUnits(R)
 
-produceResults(V, R, U)
-
+try {
+    const resultText = produceResults(V, R, U)
+    console.info(resultText)
+    process.exit(0)
+} catch (err) {
+    console.error(err)
+    process.exit(1)
+}
