@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "@brazenest/road-geometry",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Calculates standard relation between the minimum radius and maximum design speed for a road curve having 0% superelevation and a 1.0 coefficient of friction.",
   "main": "index.js",
   "author": "Alden Gillespy",
