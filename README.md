@@ -15,7 +15,11 @@ Given this equation, this program may be used in multiple ways depending on your
 1. **Specify a radius** (in meters) to calculate the proper speed limit (in km/h) for the curve.
 2. **Specify a velocity** (in km/h) to calculate the minimum radius (in meters) for the curve.
 
-The program's output also displays the values in imperial units (radius in feet, velocity in mi/h).
+## Program output
+
+The program displays the values in imperial units (radius in feet, velocity in mi/h).
+
+It also provides a guideline for selecting the in-game maximum speed limit, given the curve's maximum design speed.
 
 As this program is tailored to users of the [Cities:Skylines](https://www.citiesskylines.com/) computer game, the output of this program displays the radius value in meters and in game-units (u, where `1u === 8 meters`).
 
@@ -32,7 +36,7 @@ As this program is tailored to users of the [Cities:Skylines](https://www.cities
 
 ## Release info
 
-The latest version is **1.2.1**, and was released on **22 September 2024**.
+The latest version is **1.3.0**, and was released on **13 October 2024**.
 
 ## Copyright and License
 
