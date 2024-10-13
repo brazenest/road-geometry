@@ -1,4 +1,4 @@
-import { getUserArgs, createErrorMessage, rForGivenV, vForGivenR, produceResults, minimumLengthInMapUnits } from './helpers.js'
+import { getUserArgs, createErrorMessage, rForGivenV, vForGivenR, produceResults } from './helpers.js'
 
 const USER_ARGS = getUserArgs()
 const USER_FLAGS = Object.keys(USER_ARGS)

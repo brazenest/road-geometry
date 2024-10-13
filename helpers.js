@@ -41,7 +41,7 @@ export const maximumSpeedLimitInGameIncrements = (speed) => Math.floor(speed / S
 
 export const createErrorMessage = (message, ...extras) => Error([message, (extras.length ? extras : '')].join(' ').trim())
 
-export const produceResults = (V, R, U) => [
+export const produceResults = (V, R) => [
     'using: e + f = v^2 / 127r, e = 0, f = 0.3',
     `Max design speed:\t${V} km/h (${kilometersToMiles(V)} mi/h)`,
     `Radius min length:\t${R} m (${metersToFeet(R)} ft)`,
