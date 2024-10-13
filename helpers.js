@@ -31,15 +31,19 @@ export const rForGivenV = (v) => Math.ceil((v * v) / (COEFFICIENT_OF_FRICTION * 
 
 export const vForGivenR = (r) => Math.floor(Math.sqrt(COEFFICIENT_OF_FRICTION * 127.0 * r))
 
+export const metersToFeet = (meters) => Math.floor(meters * FEET_PER_METER)
+
+export const kilometersToMiles = (kilometers) => Math.floor(kilometers * MILES_PER_KILOMETER)
+
 export const minimumLengthInMapUnits = (meters) => Math.ceil(meters / METERS_PER_MAP_UNIT_LENGTH)
 
 export const createErrorMessage = (message, ...extras) => Error([message, (extras.length ? extras : '')].join(' ').trim())
 
 export const produceResults = (V, R, U) => [
     'using: e + f = v^2 / 127r, e = 0, f = 0.3',
-    `Max design speed:\t${V} km/h (${Math.floor(V * MILES_PER_KILOMETER)} mi/h)`,
-    `Radius min length:\t${R} m (${Math.floor(R * FEET_PER_METER)} ft)`,
-    `Radius min # tiles:\t${U} u`,
+    `Max design speed:\t${V} km/h (${kilometersToMiles(V)} mi/h)`,
+    `Radius min length:\t${R} m (${metersToFeet(R)} ft)`,
+    `Radius min # tiles:\t${minimumLengthInMapUnits(R)} u`,
 ].join("\n")
 
 export const getRandomAlphaString = (length = 1) => Array(length).fill(0).map(() => (10 + (parseInt(Math.random() * 1000) % 26)).toString(36)).join('')

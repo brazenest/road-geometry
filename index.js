@@ -9,10 +9,9 @@ if (USER_FLAGS.includes('--radius') && !(USER_ARGS['--radius'] > 0)) createError
 
 const R = USER_FLAGS.includes('--radius') ? USER_ARGS['--radius'] : rForGivenV(USER_ARGS['--velocity'])
 const V = USER_FLAGS.includes('--velocity') ? USER_ARGS['--velocity'] : vForGivenR(USER_ARGS['--radius'])
-const U = minimumLengthInMapUnits(R)
 
 try {
-    const resultText = produceResults(V, R, U)
+    const resultText = produceResults(V, R)
     console.info(resultText)
     process.exit(0)
 } catch (err) {
