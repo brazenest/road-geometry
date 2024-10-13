@@ -1,5 +1,5 @@
 import arg from 'arg'
-import { COEFFICIENT_OF_FRICTION, FEET_PER_METER, METERS_PER_MAP_UNIT_LENGTH, MILES_PER_KILOMETER, VALID_FLAGS } from './constants.js'
+import { COEFFICIENT_OF_FRICTION, FEET_PER_METER, METERS_PER_MAP_UNIT_LENGTH, MILES_PER_KILOMETER, SPEED_LIMIT_INCREMENT, VALID_FLAGS } from './constants.js'
 
 export const getUserArgs = (options = {
     argv: process.argv.slice(2),
@@ -37,6 +37,8 @@ export const kilometersToMiles = (kilometers) => Math.floor(kilometers * MILES_P
 
 export const minimumLengthInMapUnits = (meters) => Math.ceil(meters / METERS_PER_MAP_UNIT_LENGTH)
 
+export const maximumSpeedLimitInGameIncrements = (speed) => Math.floor(speed / SPEED_LIMIT_INCREMENT) * SPEED_LIMIT_INCREMENT
+
 export const createErrorMessage = (message, ...extras) => Error([message, (extras.length ? extras : '')].join(' ').trim())
 
 export const produceResults = (V, R, U) => [
@@ -44,6 +46,7 @@ export const produceResults = (V, R, U) => [
     `Max design speed:\t${V} km/h (${kilometersToMiles(V)} mi/h)`,
     `Radius min length:\t${R} m (${metersToFeet(R)} ft)`,
     `Radius min # units:\t${minimumLengthInMapUnits(R)}`,
+    `Max game speed limit:\t${maximumSpeedLimitInGameIncrements(V)} km/h (${maximumSpeedLimitInGameIncrements(kilometersToMiles(V))} mi/h)`
 ].join("\n")
 
 export const getRandomAlphaString = (length = 1) => Array(length).fill(0).map(() => (10 + (parseInt(Math.random() * 1000) % 26)).toString(36)).join('')
