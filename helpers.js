@@ -43,7 +43,7 @@ export const produceResults = (V, R, U) => [
     'using: e + f = v^2 / 127r, e = 0, f = 0.3',
     `Max design speed:\t${V} km/h (${kilometersToMiles(V)} mi/h)`,
     `Radius min length:\t${R} m (${metersToFeet(R)} ft)`,
-    `Radius min # tiles:\t${minimumLengthInMapUnits(R)} u`,
+    `Radius min # units:\t${minimumLengthInMapUnits(R)}`,
 ].join("\n")
 
 export const getRandomAlphaString = (length = 1) => Array(length).fill(0).map(() => (10 + (parseInt(Math.random() * 1000) % 26)).toString(36)).join('')
