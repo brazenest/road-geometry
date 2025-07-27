@@ -27,9 +27,11 @@ export const getUserArgs = (options = {
     return args
 }
 
-export const rForGivenV = (v) => Math.ceil((v * v) / (COEFFICIENT_OF_FRICTION * 127.0))
+export const fForGivenV = (v) => 0.5167362637362634 - 0.01707524420024417 * v + 0.0002642857142857135 * (v ** 2) - 0.00000149572649572649 * (v ** 3)
+export const fForGivenR = (r) => -1 // placeholder. see vForGivenR() below.
+export const rForGivenV = (v) => Math.ceil((v * v) / (fForGivenV(v) * 127.0))
 
-export const vForGivenR = (r) => Math.floor(Math.sqrt(COEFFICIENT_OF_FRICTION * 127.0 * r))
+export const vForGivenR = (r) => Math.floor(Math.sqrt(fForGivenR(r) * 127.0 * r))
 
 export const metersToFeet = (meters) => Math.floor(meters * FEET_PER_METER)
 
