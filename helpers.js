@@ -27,12 +27,17 @@ export const getUserArgs = (options = {
     return args
 }
 
-export const fForGivenVInImperial = (v) => 0.5167362637362634 - 0.01707524420024417 * v + 0.0002642857142857135 * (v ** 2) - 0.00000149572649572649 * (v ** 3)
-export const rForGivenVInImperial = (v) => Math.ceil(v ** 2 / 15 * fForGivenVInImperial(v))
+// equations for f(v) derived from data points provided by USFWA and plotted by https://www.dcode.fr/function-equation-finder
+export const fForGivenRInImperial = (r) => // unfinished.
+export const fForGivenVInImperial = (v) => 0.530951 + 0.0179404 * x + 0.000280672 * x ** 2 + 0.0000015937657114051 * x ** 3
+export const fForGivenRInMetric = (r) => // unfinished.
+export const fForGivenVInMetric = (v) => fForGivenVInImperial(v * MILES_PER_KILOMETER)
 
-// DEPRECATED: For f = 1.0
-// export const rForGivenVInMetric = (v) => Math.ceil((v * v) / (f * 127.0))
-// export const vForGivenRInMetric = (r) => Math.floor(Math.sqrt(f * 127.0 * r))
+export const rForGivenVInImperial = (v) => Math.ceil(v ** 2 / 15 * fForGivenVInImperial(v))
+export const rForGivenVInMetric = (v) => Math.ceil(v ** 2 / 127 * fForGivenVInMetric(v))
+
+export const vForGivenRInImperial = (r) => Math.floor(Math.sqrt(15 * fForGivenRInImperial(r))) // unfinished.
+export const vForGivenRInMetric = (r) => Math.floor(Math.sqrt(127 * fForGivenRInMetric(r)) * r)) // unfinished.
 
 export const metersToFeet = (meters) => Math.floor(meters * FEET_PER_METER)
 
